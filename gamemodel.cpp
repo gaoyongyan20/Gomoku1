@@ -1,7 +1,7 @@
 #include <utility>
 #include <stdlib.h>
 #include <time.h>
-#include "gamemodel.h"
+#include "GameModel.h"
 
 GameModel::GameModel()
 {

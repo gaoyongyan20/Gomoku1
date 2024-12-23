@@ -1,8 +1,10 @@
+// 游戏的主窗口类，主要设计游戏界面
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "gamemodel.h"
+#include <QMediaPlayer>
+#include "GameModel.h"
 
 class MainWindow : public QMainWindow
 {
@@ -20,10 +22,16 @@ protected:
     // 实际落子
     void mouseReleaseEvent(QMouseEvent *event);
 
+signals:
+    void whoWinMsgChanged();
 private:
     GameModel *game; // 游戏指针
     GameType game_type; // 存储游戏类型
     int clickPosRow, clickPosCol; // 存储将点击的位置
+    QMediaPlayer *player1;//
+    QMediaPlayer *player2;//
+    QString whoWinMsg;//
+    QAction *actionMeg;
     void initGame();
     void checkGame(int y, int x);
 
@@ -33,6 +41,12 @@ private slots:
 
     void initPVPGame();
     void initPVEGame();
+
+    void controlBgm(); // 控制背景音乐
+    void controlRestart(); // 重置游戏
+    void controlLoopBgm(); // 控制背景音乐循环播放
+    void controlMsg(); // 显示who win
+    void resetMsg(); // 重置who win
 };
 
 #endif // MAINWINDOW_H

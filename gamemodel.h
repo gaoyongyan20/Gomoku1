@@ -1,11 +1,11 @@
-// 五子棋游戏模型类，主要处理游戏运行逻辑
+// 游戏模型类，主要处理游戏的逻辑
 #ifndef GAMEMODEL_H
 #define GAMEMODEL_H
 
 #include <vector>
 
-// 游戏类型：双人还是AI
-// AI中固定黑子下棋
+// 游戏类型：双人或AI
+// 目前固定让AI下黑子
 enum GameType
 {
     PERSON,
@@ -21,7 +21,7 @@ enum GameStatus
 };
 
 // 棋盘尺寸
-const int kBoardSizeNum = 15;
+const int kBoardSizeNum = 20;
 
 class GameModel
 {
@@ -45,4 +45,3 @@ public:
 };
 
 #endif // GAMEMODEL_H
-
